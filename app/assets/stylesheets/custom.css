@@ -1129,3 +1129,8 @@ footer {
 .pagy-nav .page.active {
   @apply z-10 bg-blue-50 border-blue-500 text-blue-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium;
 }
+
+.turbo-progress-bar {
+  height: 10px;
+  background-color: PeachPuff;
+}
