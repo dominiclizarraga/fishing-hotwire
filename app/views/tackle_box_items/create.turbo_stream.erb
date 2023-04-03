@@ -1,0 +1,30 @@
+<%# long style, example below %>
+
+<%# <turbo-stream action="replace" target="bait_1">
+    <template>
+        <turbo-frame id="bait_1">
+        ...
+        </turbo-frame>
+    </template>
+</turbo-stream> %>
+
+ <%# shorthand, the 2nd parameter is for rendering @bait %>
+
+<%= turbo_stream.replace dom_id(@bait), @bait %>
+
+<%= turbo_stream.update "tackle_box_items_count",
+      current_user.tackle_box_items.size %>
+
+<%# you can pass blocks as well %>
+
+<%#= turbo_stream.replace @bait do %>
+  <%#= render @bait %>
+<%# end %>
+
+<%#= turbo_stream.update "tackle_box_items_count" do %>
+  <%#= current_user.tackle_box_items.size %>
+<%# end %>
+
+<%# and also you can make this work with inline, example below: %>
+
+<%# render turbo_stream: turbo_stream.replace(@bait, @bait) %>
