@@ -32,6 +32,11 @@ class TackleBoxItemsController < ApplicationController
     @bait.my_tackle_box_item = @item # we need to do this manually, normally the apth would be invoking method: assig_my_tackle_box
     
     # render @bait # instead of render partial: "baits/bait", object: @bait
+    
+    respond_to do |format|
+      format.turbo_stream { render :create }
+      format.html { redirect_to baits_url }
+    end
   end
 
   def destroy
@@ -42,9 +47,12 @@ class TackleBoxItemsController < ApplicationController
 
     @bait = @item.bait
 
-    #render @bait # instead of render partial: "baits/bait", object: @bait
+    # render @bait # instead of render partial: "baits/bait", object: @bait
 
-    render :create # need something to do tha same thing, replace and update 
+    respond_to do |format|
+      format.turbo_stream { render :create }
+      format.html { redirect_to baits_url }
+    end
   end
 
 end
