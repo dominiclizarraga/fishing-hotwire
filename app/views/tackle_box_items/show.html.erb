@@ -6,6 +6,7 @@
   <% end %>
 </div>
 
+<%= turbo_frame_tag @item do %>
 <div class="selected-item">
   <div class="header">
     <div class="name-category">
@@ -22,3 +23,4 @@
     <%= render @fish_catches %>
   </div>
 </div>
+<% end %>
